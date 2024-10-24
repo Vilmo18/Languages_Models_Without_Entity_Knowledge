@@ -22,6 +22,7 @@ In order to realize this study, we have followed the differents sets.
 - Fine- Tune the model without entity on task who doesn't require entity knowledge like Glue benchmark an Question answering (Squad v1)
 
 # Pretraining model
+
 <p align="center">
   <img src="images/Layer 5 (2).png" alt="Rating" width="400"/>
 </p>
@@ -32,9 +33,13 @@ The CNN Daily dataset [available here](https://huggingface.co/datasets/abisee/cn
 
 ## Data preprocessing : Dataset Anonymisation
  
-In our case we have chosen the **Flair NER model** [available here](https://huggingface.co/flair/ner-english-ontonotes-large) 
+In our case we have chosen the **Flair NER model** [available here](https://huggingface.co/flair/ner-english-ontonotes-large) which employs stacked Bidirectional Long Short-Term Memory (BiLSTM) networks to capture long-range dependencies in both forward and backward directions, which enhances the model’s contextual understanding . Finally, the incorporation of a Conditional Random Field (CRF) layer at the end allows the model to capture
+sequence-level tag dependencies, ensuring that the predicted labels form a valid sequence consistent with the training data
 
 
+<p align="center">
+  <img src="images/bilstm_crf.png" alt="Rating" width="400"/>
+</p>
 
 
 
