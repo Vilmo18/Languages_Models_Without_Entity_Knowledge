@@ -74,11 +74,9 @@ The GPT-2 model consists of several key components:
 2. **Transformer Blocks**: Stacked layers consisting of:
     - **Masked Multi-Head Self-Attention**: Allows the model to focus on different parts of the input sequence when predicting a token, using multiple attention heads.
 
-    $$
-    \begin{equation}
+    $$\[
     \text{Attention}(Q, K, V) = \text{softmax}\left( \frac{QK^\top}{\sqrt{d_k}} \right) V,
-    \end{equation}
-    $$
+    \]$$
 
     where $\( Q, K, V \)$ are the queries, keys, and values, respectively.
 
