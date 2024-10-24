@@ -99,6 +99,24 @@ The GPT-2 model consists of several key components:
 
 ##  Fine Tune the model 
 
+
+| **Task**                 | **Metric**                   | **Baseline** | **Standard Model** | **Without Entity Model** |
+|--------------------------|------------------------------|--------------|-------------------|--------------------------|
+| **Single-Sentence Tasks** |                              |              |                   |                          |
+| COLA                     | Matthews Corr.               | 33.6         | 38.0              | **36.0**                 |
+| SST-2                    | Accuracy                     | 90.4         | 92.0              | **91.0**                 |
+| **Similarity and Paraphrase Tasks** |                    |              |                   |                          |
+| MRPC                     | Accuracy / F1                | 78.0 / 84.4  | 82.0 / 88.0       | **81.0 / 87.0**          |
+| STS-B                    | Pearson / Spearman Corr.      | 74.2 / 72.3  | 87.0 / 87.0       | **83.0 / 83.0**          |
+| **Inference Tasks**       |                              |              |                   |                          |
+| RTE                      | Accuracy                     | 58.9         | 67.0              | **64.0**                 |
+| WNLI                     | Accuracy                     | 65.1         | 56.0              | **56.0**                 |
+| **Question Answering Tasks** |                         |              |                   |                          |
+| SQuAD                    | Exact Match                  | 53.2         | 59.0              | **54.0**                 |
+|                          | F1 Score                     | 65.03        | 70.0              | **61.0**                 |
+
+
+
 $$
 \begin{table}[h!]
 \centering
