@@ -100,7 +100,7 @@ The GPT-2 model consists of several key components:
 ##  Fine Tune the model 
 
 $$
-\begin{array}[h!]
+\begin{table}[h!]
 \centering
 \begin{tabular}{lcccc}
 \toprule
@@ -129,5 +129,5 @@ SQuAD & Exact Match & 53.20 & 59 & \textbf{54} \\
 \end{tabular}
 \caption{Performance Comparison across Baseline, Standard Model, and Without Entity Model}
 \label{table:model_comparison_entity_free}
-\end{array}
+\end{table}
 $$
