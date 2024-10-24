@@ -40,24 +40,26 @@ sequence-level tag dependencies, ensuring that the predicted labels form a valid
   <img src="images/bilstm_crf.png" alt="Architecture of a BiLSTM-CRF mode" width="400"/>
 </p>
 
-Specifically, when the Named Entity Recognition (NER) process identifies an entity \( e_i \) within a document, it is replaced as follows:
+Specifically, when the Named Entity Recognition (NER) process identifies an entity $\( e_i \)$ within a document, it is replaced as follows:
 
+$$
 \begin{equation}
 f(e_i) = \text{"ent"} + ID(e_i),
 \end{equation}
+$$
 
-where \( e_i \) is the identified entity in the document and \( ID(e_i) \) is a unique integer assigned to \( e_i \) within that document.
+where $\( e_i \)$ is the identified entity in the document and $\( ID(e_i) \)$ is a unique integer assigned to $\( e_i \)$ within that document.
 
 
 ## Training Unigram tokenizer
 
-The Unigram model aims to find a vocabulary $\( V \)$ and subword sequence \( s = (s_1, s_2, \dots, s_n) \) for a given input text \( T \) that maximizes the likelihood:
-
+The Unigram model aims to find a vocabulary $\( V \)$ and subword sequence $\( s = (s_1, s_2, \dots, s_n) \)$ for a given input text $\( T \)$ that maximizes the likelihood:
+$$
 \begin{equation}
 P(T) = \prod_{i=1}^{n} P(s_i),
 \end{equation}
-
-where \( P(s_i) \) is the probability of the subword unit \( s_i \).
+$$
+where $\( P(s_i) \)$ is the probability of the subword unit $\( s_i \)$.
 
 
 
