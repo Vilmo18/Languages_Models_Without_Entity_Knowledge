@@ -68,25 +68,29 @@ where $\( P(s_i) \)$ is the probability of the subword unit $\( s_i \)$.
 The GPT-2 model consists of several key components:
 
 1. **Embedding Layer**: Transforms input tokens into continuous vector representations.
-    - **Token Embeddings**: Each token \( t_i \) is mapped to an embedding \( \mathbf{e}_i \in \mathbb{R}^d \), where \( d \) is the embedding dimension.
+    - **Token Embeddings**: Each token $\( t_i \)$ is mapped to an embedding $\( \mathbf{e}_i \in \mathbb{R}^d \)$, where $\( d \)$ is the embedding dimension.
     - **Position Embeddings**: Adds positional information to the token embeddings to retain the order of the sequence.
 
 2. **Transformer Blocks**: Stacked layers consisting of:
     - **Masked Multi-Head Self-Attention**: Allows the model to focus on different parts of the input sequence when predicting a token, using multiple attention heads.
     
-    ```math
+    $$
+    \begin{equation}
     \text{Attention}(Q, K, V) = \text{softmax}\left( \frac{QK^\top}{\sqrt{d_k}} \right) V
-    ```
-    
-    Where \( Q, K, V \) are the queries, keys, and values, respectively.
+    \end{equation}
+    $$
+
+    Where $\( Q, K, V \)$ are the queries, keys, and values, respectively.
 
     - **Feed-Forward Neural Network (FFN)**: Applies two linear transformations with a non-linear activation in between, typically the Gaussian Error Linear Unit (GELU).
     
-    ```math
+    $$
+    \begin{equation}
     \text{FFN}(x) = \text{GELU}(xW_1 + b_1)W_2 + b_2
-    ```
+    \end{equation}
+    $$
 
-    Where \( W_1, b_1, W_2 \), and \( b_2 \) are the weight matrices and bias vectors for the first and second linear transformations, and \( x \) is the input to the feed-forward network.
+    Where $\( W_1, b_1, W_2 \)$, and $\( b_2 \)$ are the weight matrices and bias vectors for the first and second linear transformations, and $\( x \)$ is the input to the feed-forward network.
 
     - **Layer Normalization**: Normalizes inputs to each sub-layer to stabilize and accelerate training.
 
