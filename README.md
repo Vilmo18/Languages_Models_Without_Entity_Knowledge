@@ -114,38 +114,3 @@ The GPT-2 model consists of several key components:
 | **Question Answering Tasks** |                         |              |                   |                          |
 | SQuAD                    | Exact Match                  | 53.2         | 59.0              | **54.0**                 |
 |                          | F1 Score                     | 65.03        | 70.0              | **61.0**                 |
-
-
-
-$$
-\begin{table}[h!]
-\centering
-\begin{tabular}{lcccc}
-\toprule
-\textbf{Task} & \textbf{Metric} & \textbf{Baseline} & \textbf{Standard Model} & \textbf{Without Entity Model} \\
-\midrule
-\multicolumn{5}{l}{\textbf{Single-Sentence Tasks}} \\
-\midrule
-COLA & Matthews corr. & 33.6 & 38 & \textbf{36} \\
-SST-2 & Accuracy & 90.4 & 92 & \textbf{91} \\
-\midrule
-\multicolumn{5}{l}{\textbf{Similarity and Paraphrase Tasks}} \\
-\midrule
-MRPC & Acc. / F1 & 78.0/84.4 & 82/88 & \textbf{81/87} \\
-STS-B & Pearson / Spearman corr. & 74.2/72.3 & 87/87 & \textbf{83/83} \\
-\midrule
-\multicolumn{5}{l}{\textbf{Inference Tasks}} \\
-\midrule
-RTE & Accuracy & 58.9 & 67 & \textbf{64} \\
-WNLI & Accuracy & 65.1 & 56 & \textbf{56} \\
-\midrule
-\multicolumn{5}{l}{\textbf{Question Answering Tasks}} \\
-\midrule
-SQuAD & Exact Match & 53.20 & 59 & \textbf{54} \\
- & F1 & 65.03 & 70 & \textbf{61} \\
-\bottomrule
-\end{tabular}
-\caption{Performance Comparison across Baseline, Standard Model, and Without Entity Model}
-\label{table:model_comparison_entity_free}
-\end{table}
-$$
