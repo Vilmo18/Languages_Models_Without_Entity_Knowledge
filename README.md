@@ -65,35 +65,34 @@ where $\( P(s_i) \)$ is the probability of the subword unit $\( s_i \)$.
 
 ## GPT2 architecture
 
+The GPT-2 model consists of several key components:
 
-The GPT-2 model consists of several key components :
+1. **Embedding Layer**: Transforms input tokens into continuous vector representations.
+    - **Token Embeddings**: Each token \( t_i \) is mapped to an embedding \( \mathbf{e}_i \in \mathbb{R}^d \), where \( d \) is the embedding dimension.
+    - **Position Embeddings**: Adds positional information to the token embeddings to retain the order of the sequence.
 
-$$
-\begin{enumerate}
-    \item \textbf{Embedding Layer}: Transforms tokens into continuous vectors.
-    \begin{itemize}
-        \item  \textbf{Token Embeddings}: Each token \( t_i \) is mapped to an embedding \( \mathbf{e}_i \in \mathbb{R}^d \).
-        \item \textbf{Position Embeddings}: Adds positional information to maintain sequence order.
-    \end{itemize}
+2. **Transformer Blocks**: Stacked layers consisting of:
+    - **Masked Multi-Head Self-Attention**: Allows the model to focus on different parts of the input sequence when predicting a token, using multiple attention heads.
     
-    \item \textbf{Transformer Blocks}: Stacked layers consisting of:
-    \begin{itemize}
-       \item  \textbf{Masked Multi-Head Self-Attention}: 
-     \[
-     \text{Attention}(Q, K, V) = \text{softmax}\left( \frac{QK^\top}{\sqrt{d_k}} \right) V
-     \]
-   
-   \item \textbf{Feed-Forward Neural Network (FFN)}:
-     \[
-     \text{FFN}(x) = \text{GELU}(xW_1 + b_1)W_2 + b_2
-     \]
-     \item \textbf{Layer Normalization}: Normalizes inputs to stabilize training.
- \end{itemize}
- 
-    \item \textbf{Output Layer}: Projects hidden states back to the token vocabulary for next-token prediction.
-\end{enumerate}
+    ```math
+    \text{Attention}(Q, K, V) = \text{softmax}\left( \frac{QK^\top}{\sqrt{d_k}} \right) V
+    ```
+    
+    Where \( Q, K, V \) are the queries, keys, and values, respectively.
 
-$$
+    - **Feed-Forward Neural Network (FFN)**: Applies two linear transformations with a non-linear activation in between, typically the Gaussian Error Linear Unit (GELU).
+    
+    ```math
+    \text{FFN}(x) = \text{GELU}(xW_1 + b_1)W_2 + b_2
+    ```
+
+    Where \( W_1, b_1, W_2 \), and \( b_2 \) are the weight matrices and bias vectors for the first and second linear transformations, and \( x \) is the input to the feed-forward network.
+
+    - **Layer Normalization**: Normalizes inputs to each sub-layer to stabilize and accelerate training.
+
+3. **Output Layer**: Projects the hidden states back to the token vocabulary space to predict the next token.
+
+
 
 <p align="center">
   <img src="images/Full_GPT_architecture.png" alt="GPT2 Architecture" width="400"/>
