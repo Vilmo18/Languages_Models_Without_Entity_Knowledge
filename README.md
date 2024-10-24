@@ -74,17 +74,17 @@ The GPT-2 model consists of several key components:
 2. **Transformer Blocks**: Stacked layers consisting of:
     - **Masked Multi-Head Self-Attention**: Allows the model to focus on different parts of the input sequence when predicting a token, using multiple attention heads.
 
-    $$
+    $
     \text{Attention}(Q, K, V) = \text{softmax}\left( \frac{QK^\top}{\sqrt{d_k}} \right) V,
-    $$
+    $
 
     where $\( Q, K, V \)$ are the queries, keys, and values, respectively.
 
     - **Feed-Forward Neural Network (FFN)**: Applies two linear transformations with a non-linear activation in between, typically the Gaussian Error Linear Unit (GELU).
     
-    $$
+    $
     \text{FFN}(x) = \text{GELU}(xW_1 + b_1)W_2 + b_2
-    $$
+    $
 
     Where $\( W_1, b_1, W_2 \)$, and $\( b_2 \)$ are the weight matrices and bias vectors for the first and second linear transformations, and $\( x \)$ is the input to the feed-forward network.
 
