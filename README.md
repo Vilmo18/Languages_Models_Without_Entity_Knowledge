@@ -51,7 +51,7 @@ where \( e_i \) is the identified entity in the document and \( ID(e_i) \) is a 
 
 ## Training Unigram tokenizer
 
-The Unigram model aims to find a vocabulary \( V \) and subword sequence \( s = (s_1, s_2, \dots, s_n) \) for a given input text \( T \) that maximizes the likelihood:
+The Unigram model aims to find a vocabulary $\( V \)$ and subword sequence \( s = (s_1, s_2, \dots, s_n) \) for a given input text \( T \) that maximizes the likelihood:
 
 \begin{equation}
 P(T) = \prod_{i=1}^{n} P(s_i),
