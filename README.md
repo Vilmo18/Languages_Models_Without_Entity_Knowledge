@@ -54,13 +54,49 @@ where $\( e_i \)$ is the identified entity in the document and $\( ID(e_i) \)$ i
 ## Training Unigram tokenizer
 
 The Unigram model aims to find a vocabulary $\( V \)$ and subword sequence $\( s = (s_1, s_2, \dots, s_n) \)$ for a given input text $\( T \)$ that maximizes the likelihood:
+
 $$
 \begin{equation}
 P(T) = \prod_{i=1}^{n} P(s_i),
 \end{equation}
 $$
+
 where $\( P(s_i) \)$ is the probability of the subword unit $\( s_i \)$.
 
+## GPT2 architecture
 
+
+The GPT-2 model consists of several key components :
+
+$$
+\begin{enumerate}
+    \item \textbf{Embedding Layer}: Transforms tokens into continuous vectors.
+    \begin{itemize}
+        \item  \textbf{Token Embeddings}: Each token \( t_i \) is mapped to an embedding \( \mathbf{e}_i \in \mathbb{R}^d \).
+        \item \textbf{Position Embeddings}: Adds positional information to maintain sequence order.
+    \end{itemize}
+    
+    \item \textbf{Transformer Blocks}: Stacked layers consisting of:
+    \begin{itemize}
+       \item  \textbf{Masked Multi-Head Self-Attention}: 
+     \[
+     \text{Attention}(Q, K, V) = \text{softmax}\left( \frac{QK^\top}{\sqrt{d_k}} \right) V
+     \]
+   
+   \item \textbf{Feed-Forward Neural Network (FFN)}:
+     \[
+     \text{FFN}(x) = \text{GELU}(xW_1 + b_1)W_2 + b_2
+     \]
+     \item \textbf{Layer Normalization}: Normalizes inputs to stabilize training.
+ \end{itemize}
+ 
+    \item \textbf{Output Layer}: Projects hidden states back to the token vocabulary for next-token prediction.
+\end{enumerate}
+
+$$
+
+<p align="center">
+  <img src="images/Full_GPT_architecture.png" alt="GPT2 Architecture" width="400"/>
+</p>
 
 
